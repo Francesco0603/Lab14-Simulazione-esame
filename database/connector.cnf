@@ -1,7 +1,0 @@
-[client]
-user=root
-password=PopiPassword23!
-host=127.0.0.1
-database=genes_small
-port=3307
-raise_on_warnings=True
