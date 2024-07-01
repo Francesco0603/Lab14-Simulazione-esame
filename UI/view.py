@@ -31,10 +31,10 @@ class View(ft.UserControl):
         self._title = ft.Text("Lab14-Simulazione esame gene_small", color="blue", size=24)
         self._page.controls.append(self._title)
 
-        self.btn_graph = ft.ElevatedButton(text="Crea Grafo", on_click=self._controller.handle_graph)
-        row1 = ft.Row([self.btn_graph],
-                      alignment=ft.MainAxisAlignment.CENTER)
-        self._page.controls.append(row1)
+        #self.btn_graph = ft.ElevatedButton(text="Crea Grafo", on_click=self._controller.handle_graph)
+        #row1 = ft.Row([self.btn_graph],
+        #             alignment=ft.MainAxisAlignment.CENTER)
+        #self._page.controls.append(row1)
 
         # List View where the reply is printed
         self.txt_result = ft.ListView(expand=1, spacing=10, padding=20, auto_scroll=True)
@@ -66,6 +66,7 @@ class View(ft.UserControl):
         # List View where the reply is printed
         self.txt_result3 = ft.ListView(expand=1, spacing=10, padding=20, auto_scroll=True)
         self._page.controls.append(self.txt_result3)
+        self.controller.handle_graph()
         self._page.update()
     @property
     def controller(self):
