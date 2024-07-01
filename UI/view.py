@@ -28,13 +28,8 @@ class View(ft.UserControl):
 
     def load_interface(self):
         # title
-        self._title = ft.Text("Lab14-Simulazione esame gene_small", color="blue", size=24)
+        self._title = ft.Text("SCHELETRO ESAME", color="blue", size=24)
         self._page.controls.append(self._title)
-
-        #self.btn_graph = ft.ElevatedButton(text="Crea Grafo", on_click=self._controller.handle_graph)
-        #row1 = ft.Row([self.btn_graph],
-        #             alignment=ft.MainAxisAlignment.CENTER)
-        #self._page.controls.append(row1)
 
         # List View where the reply is printed
         self.txt_result = ft.ListView(expand=1, spacing=10, padding=20, auto_scroll=True)
@@ -48,25 +43,10 @@ class View(ft.UserControl):
             width=200,
             hint_text="Soglia (s)"
         )
-        self.btn_countedges = ft.ElevatedButton(text="Conta Archi", on_click=self._controller.handle_countedges)
-        row2 = ft.Row([self.txt_name, self.btn_countedges],
+        self.btn_count = ft.ElevatedButton(text="Conta", on_click=self._controller.handle_count)
+        row1 = ft.Row([self.txt_name, self.btn_countedges],
                       alignment=ft.MainAxisAlignment.CENTER)
-        self._page.controls.append(row2)
-
-        # List View where the reply is printed
-        self.txt_result2 = ft.ListView(expand=1, spacing=10, padding=20, auto_scroll=True)
-        self._page.controls.append(self.txt_result2)
-        self._page.update()
-
-        self.btn_search = ft.ElevatedButton(text="Cerca cammino", on_click=self._controller.handle_search)
-        row3 = ft.Row([self.btn_search],
-                      alignment=ft.MainAxisAlignment.CENTER)
-        self._page.controls.append(row3)
-
-        # List View where the reply is printed
-        self.txt_result3 = ft.ListView(expand=1, spacing=10, padding=20, auto_scroll=True)
-        self._page.controls.append(self.txt_result3)
-        self.controller.handle_graph()
+        self._page.controls.append(row1)
         self._page.update()
     @property
     def controller(self):
